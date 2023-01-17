@@ -95,7 +95,7 @@ const validarPasswordExistente = (password, email) => {
 
 const validarPassword = (password) => {
 
-    const regEx = /"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"/;
+    const regEx = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,16})/;
     return regEx.test(password) ? true : false;
 }
 
