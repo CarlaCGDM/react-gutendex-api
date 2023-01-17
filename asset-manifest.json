@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gutendex-api/static/css/main.d482bb8f.css",
-    "main.js": "/react-gutendex-api/static/js/main.9491d4d2.js",
+    "main.css": "/react-gutendex-api/static/css/main.4e32c743.css",
+    "main.js": "/react-gutendex-api/static/js/main.4a8ccfe1.js",
+    "static/media/avatarUsuario.png": "/react-gutendex-api/static/media/avatarUsuario.dd8627bdce629ddc8dca.png",
     "static/media/logo.svg": "/react-gutendex-api/static/media/logo.784ebadc2fcf69fee30df8c4145c19b5.svg",
     "index.html": "/react-gutendex-api/index.html",
-    "main.d482bb8f.css.map": "/react-gutendex-api/static/css/main.d482bb8f.css.map",
-    "main.9491d4d2.js.map": "/react-gutendex-api/static/js/main.9491d4d2.js.map"
+    "main.4e32c743.css.map": "/react-gutendex-api/static/css/main.4e32c743.css.map",
+    "main.4a8ccfe1.js.map": "/react-gutendex-api/static/js/main.4a8ccfe1.js.map"
   },
   "entrypoints": [
-    "static/css/main.d482bb8f.css",
-    "static/js/main.9491d4d2.js"
+    "static/css/main.4e32c743.css",
+    "static/js/main.4a8ccfe1.js"
   ]
 }
