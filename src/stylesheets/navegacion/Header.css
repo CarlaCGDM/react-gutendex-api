@@ -1,0 +1,9 @@
+.main__header {
+    background-color: var(--primary-dark-color);
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: baseline;
+    color: var(--primary-light-color);
+    padding: 10px;
+}

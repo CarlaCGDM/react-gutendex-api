@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Filtros.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Filtros.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useState} from 'react'
+import '../stylesheets/Filtros.css'
+import Searchbar from './input/Searchbar'
+import TextInput from './input/TextInput'
+import Select from './input/Select'
+import { paginaListado } from '../scripts/peticiones'
+
+/**
+*   @description Esta es la zona donde el usuario podrá especificar los distintos filtros de
+*   búsqueda que quiere aplicar. Los filtros pueden proceder de la barra de búsqueda,
+*   los menús desplegables o los campos de input de tipo texto. Todos estos valores
+*   se sumarán como parámetros para generar la URL final con la petición a la API.
+*   @name Filtros
+*   @param {function} setResultadosBusqueda Función setter que asignará el valor de los resultados obtenidos en la llamada a la API
+*   al campo correspondiente en el componente padre Inicio.
+*   @function
+*/
+
+const Filtros = ({setResultadosBusqueda}) => {
+
+  /* Obtener los datos de los componentes hijos */
+
+  const [busqueda, setBusqueda] = useState("");
+  const busquedaHandler = (busqueda) => { setBusqueda("search=" + busqueda.split(" ").join("%20")); }
+
+  const [desde, setDesde] = useState("");
+  const desdeHandler = (desde) => { setDesde("author_year_start=" + desde); }
+
+  const [hasta, setHasta] = useState("");
+  const hastaHandler = (hasta) => { setHasta("author_year_end=" + hasta); }
+
+  const [tema, setTema] = useState("");
+  const temaHandler = (tema) => { setTema("topic=" + tema); }
+
+  const [idiomas, setIdiomas] = useState("");
+  const idiomasHandler = (idiomas) => { setIdiomas("languages=" + idiomas.join(",")); }
+  
+  const idiomasDisponibles = {
+    Chinese: "zh",
+    Danish: "da",
+    Dutch: "nl",
+    English: "en",
+    Esperanto: "eo",
+    Finnish: "fi",
+    French: "fr",
+    German: "de",
+    Greek: "el",
+    Hungarian: "hu",
+    Italian: "it",
+    Latin: "la",
+    Portuguese: "pt",
+    Spanish: "es",
+    Swedish: "sv",
+    Tagalog: "tl",
+  }
+
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+
+    /* Generar URL sumando todos los parámetros */
+
+    let miURL = "https://gutendex.com/books?";
+
+    let filtros = [
+      busqueda,
+      desde,
+      hasta,
+      tema,
+      idiomas
+    ].join("&amp;");
+
+    miURL += filtros;
+
+    /* Realizar petición a la API */
+
+    paginaListado(miURL).then(json => {
+      setResultadosBusqueda(json);
+    });
+
+  }
+
+return (
+  &lt;form className="filtros__busqueda" onSubmit={handleSubmit}>
+    &lt;Searchbar onSearch={busquedaHandler}/>
+    &lt;fieldset>
+      &lt;legend>Filtros de búsqueda:&lt;/legend>
+      &lt;div>
+        &lt;TextInput onText={desdeHandler} label="Libros a partir del año..."/>
+        &lt;TextInput onText={hastaHandler} label="Libros hasta el año..."/>
+        &lt;TextInput onText={temaHandler} label="Temática"/>
+      &lt;/div>
+      &lt;Select onSelect={idiomasHandler} label="Idiomas" opciones={idiomasDisponibles}/>
+    &lt;/fieldset>
+    &lt;button className="submit__button">Buscar&lt;/button>
+  &lt;/form>
+)
+
+}
+
+export default Filtros
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Peticiones.html">Peticiones</a></li><li><a href="module-Validaciones.html">Validaciones</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BotonFavorito">BotonFavorito</a></li><li><a href="global.html#Consejo">Consejo</a></li><li><a href="global.html#Contacto">Contacto</a></li><li><a href="global.html#DateInput">DateInput</a></li><li><a href="global.html#Detalle">Detalle</a></li><li><a href="global.html#Filtros">Filtros</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Inicio">Inicio</a></li><li><a href="global.html#Libro">Libro</a></li><li><a href="global.html#Librosgrid">Librosgrid</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#NumberInput">NumberInput</a></li><li><a href="global.html#Paginador">Paginador</a></li><li><a href="global.html#PasswordInput">PasswordInput</a></li><li><a href="global.html#Perfil">Perfil</a></li><li><a href="global.html#Registro">Registro</a></li><li><a href="global.html#Searchbar">Searchbar</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#Tema">Tema</a></li><li><a href="global.html#TextArea">TextArea</a></li><li><a href="global.html#TextInput">TextInput</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Jan 17 2023 17:46:23 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

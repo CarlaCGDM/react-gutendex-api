@@ -1,0 +1,37 @@
+:root {
+    --primary-dark-color: rgb(0, 0, 0);
+    --secondary-dark-color: rgb(48, 48, 48);
+    --brand-color: rgb(248, 16, 16);
+    --primary-light-color: white;
+    --secondary-light-color: rgb(83, 83, 83);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.basic__form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-light-color);
+    color: var(--primary-light-color);
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    align-items: center;
+    margin: 5vh 5vw;
+}
+
+.section__header {
+    text-align: center;
+    margin-top: 5vh;
+}

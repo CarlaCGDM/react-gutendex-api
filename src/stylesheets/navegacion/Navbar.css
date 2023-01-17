@@ -1,0 +1,7 @@
+.main__navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color: var(--main-light-color);
+    padding: 10px;
+}

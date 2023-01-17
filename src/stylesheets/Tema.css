@@ -1,0 +1,8 @@
+.enlace__tema {
+    background-color: var(--secondary-light-color);
+    color: var(--primary-light-color);
+    border-radius: 5px;
+    font-size: 0.8em;
+    padding: 5px;
+    text-align: center;
+}

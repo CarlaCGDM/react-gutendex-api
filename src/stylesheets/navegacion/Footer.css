@@ -1,0 +1,6 @@
+.footer__principal {
+    background-color: var(--primary-dark-color);
+    color: var(--primary-light-color);
+    padding: 20px;
+    text-align: center;
+}

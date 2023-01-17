@@ -1,0 +1,27 @@
+.vista__libro {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px;
+}
+
+.info__libro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info__libro button {
+    width: 20%;
+    margin: 20px;
+    align-self: center;
+}
+
+.temas__libro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+

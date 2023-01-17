@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/vistas/Registro.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/vistas/Registro.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useState} from 'react';
+import { validarEmail, validarPassword, validarPasswordRepetido, validarFechaNacimiento, validarNick } from '../../scripts/validaciones';
+import Header from '../navegacion/Header';
+import Navbar from '../navegacion/Navbar';
+import Footer from '../navegacion/Footer';
+import TextInput from '../input/TextInput';
+import PasswordInput from '../input/PasswordInput';
+import DateInput from '../input/DateInput';
+import { Link } from 'react-router-dom';
+
+/**
+*   @description Página de registro de la página web. El usuario puede registrarse con un nombre de usuario, un correo
+*   electrónico, una contraseña y una fecha de nacimiento válidos. Todos los campos se validan desde el front.
+*   @name Registro
+*   @function
+*/
+
+const Registro = () => {
+
+    /* Controladores de los distintos campos */
+
+    const [nick, setNick] = useState("");
+    const nickHandler = (nick) => { setNick(nick); }
+
+    const [email, setEmail] = useState("");
+    const emailHandler = (email) => { setEmail(email); }
+
+    const [password, setPassword] = useState("");
+    const passwordHandler = (password) => { setPassword(password); }
+
+    const [passwordRepetido, setPasswordRepetido] = useState("");
+    const passwordRepetidoHandler = (passwordRepetido) => { setPasswordRepetido(passwordRepetido); }
+
+    const [fecha, setfecha] = useState("");
+    const fechaHandler = (fecha) => { setfecha(fecha) }
+
+    console.log(fecha);
+
+    /* Controladores de los mensajes de error/éxito */
+
+    const errores = {
+        "nick":"El nombre de usuario debe contener entre 1 y 30 caracteres, y no puede incluir caracteres especiales",
+        "email":"El correo electrónico no es válido.",
+        "password":"La contraseña debe contener entre 8 y 16 caracteres alfanuméricos y al menos un caracter especial.",
+        "passwordRepetido":"Ambas contraseñas deben coincidir.",
+        "fecha":"Debes ser mayor de 16 años para registrarte en la aplicación.",
+        "exito":"¡Registro exitoso!"
+    }
+
+    const [exitoSubmit, setExitoSubmit] = useState("");
+    const [errorNick, setErrorNick] = useState("");
+    const [errorEmail, setErrorEmail] = useState("");
+    const [errorPassword, setErrorPassword] = useState("");
+    const [errorFecha, setErrorFecha] = useState("");
+    const [errorPasswordRepetido, setErrorPasswordRepetido] = useState("");
+
+    /* Controlador del submit del formulario */
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+
+        setExitoSubmit("");
+
+        /* Validar los datos introducidos y mostrar mensajes de error/éxito. */
+
+        const nickValido = validarNick(nick);
+        const emailValido = validarEmail(email);
+        const passwordValido = validarPassword(password,email);
+        const passwordRepetidoValido = validarPasswordRepetido(passwordRepetido,password);
+        const fechaValido = validarFechaNacimiento(fecha);
+
+        nickValido ? setErrorNick("") : setErrorNick(errores.nick);
+        emailValido ? setErrorEmail("") : setErrorEmail(errores.email);
+        passwordValido ? setErrorPassword("") : setErrorPassword(errores.password);
+        passwordRepetidoValido ? setErrorPasswordRepetido("") : setErrorPasswordRepetido(errores.passwordRepetido);
+        fechaValido ? setErrorFecha("") : setErrorFecha(errores.fecha);
+
+        if (nickValido &amp;&amp; emailValido &amp;&amp; passwordValido &amp;&amp; passwordRepetidoValido &amp;&amp; fechaValido) {
+
+            /* Borrar campos y mostrar mensaje de éxito */
+
+            setNick("");
+            setEmail("");
+            setPassword("");
+            setPasswordRepetido("");
+            setfecha("");
+            setExitoSubmit(errores.exito);
+        }
+    
+      }
+
+  return (
+    &lt;>
+    &lt;Header />
+    &lt;Navbar />
+    &lt;main>
+        &lt;header className="section__header">
+            &lt;h2>Registro&lt;/h2>
+            &lt;p>¿Ya tienes cuenta? &lt;Link to={`/login`}>Inicia sesión&lt;/Link>.&lt;/p>
+        &lt;/header>
+        &lt;form className="basic__form" onSubmit={handleSubmit}>
+
+            &lt;TextInput onText={nickHandler} label="Nombre de usuario:" error={errorNick} value={nick} />
+            &lt;TextInput onText={emailHandler} label="Correo electrónico:" error={errorEmail} value={email} />
+            &lt;PasswordInput onText={passwordHandler} label="Contraseña:" error={errorPassword} value={password} />
+            &lt;PasswordInput onText={passwordRepetidoHandler} label="Repetir contraseña:" error={errorPasswordRepetido} value={passwordRepetido} />
+            &lt;DateInput onDate={fechaHandler} label="Fecha de nacimiento:" error={errorFecha} value={fecha} />
+
+            &lt;button className="submit__button">Enviar&lt;/button>
+            {exitoSubmit &amp;&amp; ( &lt;p className="exito"> { exitoSubmit } &lt;/p> )}
+
+        &lt;/form>
+    &lt;/main>
+    &lt;Footer />
+    &lt;/>
+  )
+}
+
+export default Registro
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Peticiones.html">Peticiones</a></li><li><a href="module-Validaciones.html">Validaciones</a></li></ul><h3>Global</h3><ul><li><a href="global.html#BotonFavorito">BotonFavorito</a></li><li><a href="global.html#Consejo">Consejo</a></li><li><a href="global.html#Contacto">Contacto</a></li><li><a href="global.html#DateInput">DateInput</a></li><li><a href="global.html#Detalle">Detalle</a></li><li><a href="global.html#Filtros">Filtros</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Inicio">Inicio</a></li><li><a href="global.html#Libro">Libro</a></li><li><a href="global.html#Librosgrid">Librosgrid</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#NumberInput">NumberInput</a></li><li><a href="global.html#Paginador">Paginador</a></li><li><a href="global.html#PasswordInput">PasswordInput</a></li><li><a href="global.html#Perfil">Perfil</a></li><li><a href="global.html#Registro">Registro</a></li><li><a href="global.html#Searchbar">Searchbar</a></li><li><a href="global.html#Select">Select</a></li><li><a href="global.html#Tema">Tema</a></li><li><a href="global.html#TextArea">TextArea</a></li><li><a href="global.html#TextInput">TextInput</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Jan 17 2023 17:46:23 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

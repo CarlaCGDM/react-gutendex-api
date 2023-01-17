@@ -1,0 +1,30 @@
+.libro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 160px;
+    gap: 5px;
+}
+
+.portada__libro {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.portada__libro img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.portada__libro p {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+}

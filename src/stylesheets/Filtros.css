@@ -1,0 +1,16 @@
+.filtros__busqueda {
+    background-color: var(--secondary-light-color);
+    color: var(--primary-light-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.filtros__busqueda fieldset {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}

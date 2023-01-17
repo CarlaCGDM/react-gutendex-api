@@ -1,0 +1,15 @@
+label {
+    font-size: 0.9rem;
+}
+
+.input__field {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 60vw;
+}
+
+.input__error {
+    font-size: 0.9rem;
+    color: var(--brand-color);
+}
