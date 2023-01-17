@@ -1,6 +1,6 @@
 {
   "name": "gutendex-api",
-  "homepage": "https://carlacgdm.github.io/gutendex-api-react",
+  "homepage": "https://carlacgdm.github.io/react-gutendex-api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
