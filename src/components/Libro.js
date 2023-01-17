@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import '../stylesheets/Libro.css'
 import BotonFavorito from './input/BotonFavorito'
+import { Link } from 'react-router-dom'
 
 /**
 *   @description El componente libro muestra la información básica de cada libro (portada, título y autor) así como un enlace hacia
@@ -37,7 +38,7 @@ const Libro = ({libro}) => {
 
         </div>
 
-        <a href={`/libros/${libro.id}`}>{libro.title}</a>
+        <Link to={`/libros/${libro.id}`}>{libro.title}</Link>
         <small>{libro.authors[0]?.name}</small>
 
         <BotonFavorito className="boton__favorito" id={libro.id}/>

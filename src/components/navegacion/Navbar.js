@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <navbar className="main__navbar">
-    <Link to={`/`}>Inicio</Link>
+      <Link to={`/`}>Inicio</Link>
       <Link to={`/perfil`}>Perfil</Link>
       <Link to={`/login`}>Login</Link>
       <Link to={`/registro`}>Registro</Link>
