@@ -14,7 +14,7 @@ const BotonFavorito = (props) => {
   let favoritos = localStorage.getItem("Favoritos")?.split(",").filter((id) => id != "").map(Number);
 
 
-  const [existe, setExiste] = useState(favoritos.includes(props.id) ? true : false);
+  const [existe, setExiste] = useState(favoritos?.includes(props.id) ? true : false);
 
   const eliminar = (id) => { 
 
