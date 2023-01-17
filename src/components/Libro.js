@@ -40,7 +40,7 @@ const Libro = ({libro}) => {
         <a href={`/libros/${libro.id}`}>{libro.title}</a>
         <small>{libro.authors[0]?.name}</small>
 
-        <BotonFavorito className="boton__favorito" id={libro.id} />
+        <BotonFavorito className="boton__favorito" id={libro.id}/>
 
     </article>
   )
