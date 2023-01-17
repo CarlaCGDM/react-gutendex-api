@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../stylesheets/LibrosGrid.css'
 import Libro from './Libro'
 
@@ -15,11 +15,11 @@ import Libro from './Libro'
 
 const LibrosGrid = ({ resultadosBusqueda, numeroResultados }) => {
 
-  
+
 
     const resultados = resultadosBusqueda?.map(libro => <Libro key={libro.id} libro={libro} />);
     const contenido = resultados?.length ? resultados : <article><p>No se encontraron resultados.</p></article>
-  
+
   return (
     <section className="grid__libros">
       <header><small>Se encontraron {numeroResultados} resultados para tu búsqueda.</small></header>

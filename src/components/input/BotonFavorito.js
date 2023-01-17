@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 /**
 *   @description El botón permite guardar un libro en favoritos si no se ha guardado ya, y 
@@ -11,39 +11,44 @@ import React, { useState } from 'react';
 
 const BotonFavorito = (props) => {
 
+  //Estado inicial del botón de favoritos
   let favoritos = localStorage.getItem("Favoritos")?.split(",").filter((id) => id != "").map(Number);
-
-
   const [existe, setExiste] = useState(favoritos?.includes(props.id) ? true : false);
 
   const eliminar = (id) => { 
 
+    //Valor actual de los favoritos
+    favoritos = localStorage.getItem("Favoritos")?.split(",").filter((id) => id != "").map(Number);
+
+    //Localizar y eliminar elemento de la lista
     const indice = favoritos.indexOf(id);
     favoritos.splice(indice,1);
     localStorage.setItem("Favoritos",favoritos.join(","));
 
-    console.log("eliminado " + id);
-    console.log(indice);
-    console.log(favoritos);
-
+    //Mostrar u ocultar botón correspondiente
     setExiste(favoritos.includes(id) ? true : false); 
   }
 
   const agregar = (id) => {
-    
+
+    //Valor actual de los favoritos
+    favoritos = localStorage.getItem("Favoritos")?.split(",").filter((id) => id != "").map(Number);
+
+    //Sumar elemento a la lista
     favoritos.push(id);
     localStorage.setItem("Favoritos",favoritos.join(","));
-
-    console.log("agregado " + id);
-    console.log(favoritos);
     
+    //Mostrar u ocultar botón correspondiente
     setExiste(favoritos.includes(id) ? true : false);
   }
-  
+
+  useEffect(() => {
+    favoritos = localStorage.getItem("Favoritos")?.split(",").filter((id) => id != "").map(Number);
+  }, []);
 
   return (
     <>
-      {!existe && ( <button className="fave__button" onClick={() => agregar(props.id)}>Añadir a favoritos</button> )}
+      {!existe && ( <button className="fave__button" onClick={() => {agregar(props.id)}}>Añadir a favoritos</button> )}
       {existe && ( <button className="fave__button" onClick={() => eliminar(props.id)}>Eliminar de favoritos</button> )}
     </>
   )

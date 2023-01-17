@@ -2,8 +2,10 @@ import React, {useState} from 'react'
 import '../stylesheets/Filtros.css'
 import Searchbar from './input/Searchbar'
 import TextInput from './input/TextInput'
+import NumberInput from './input/NumberInput'
 import Select from './input/Select'
 import { paginaListado } from '../scripts/peticiones'
+import { validarAnyo } from '../scripts/validaciones'
 
 /**
 *   @description Esta es la zona donde el usuario podrá especificar los distintos filtros de
@@ -54,6 +56,13 @@ const Filtros = ({setResultadosBusqueda}) => {
     Tagalog: "tl",
   }
 
+  const errores = {
+    "anyo":"El año debe ser un número entero.",
+  }
+
+  const [errorDesde, setErrorDesde] = useState("");
+  const [errorHasta, setErrorHasta] = useState("");
+
   const handleSubmit = (e) => {
 
     e.preventDefault();
@@ -72,12 +81,21 @@ const Filtros = ({setResultadosBusqueda}) => {
 
     miURL += filtros;
 
-    /* Realizar petición a la API */
+    /* Realizar petición a la API sólo si los valores introducidos en la búsqueda son válidos*/
 
-    paginaListado(miURL).then(json => {
-      setResultadosBusqueda(json);
-    });
+    const desdeValido = validarAnyo(desde);
+    const hastaValido = validarAnyo(hasta);
 
+    desdeValido ? setErrorDesde("") : setErrorDesde(errores.anyo);
+    hastaValido ? setErrorHasta("") : setErrorHasta(errores.anyo);
+
+    if (desdeValido && hastaValido) {
+
+      paginaListado(miURL).then(json => {
+        setResultadosBusqueda(json);
+      });
+
+    }
   }
 
 return (
@@ -85,12 +103,14 @@ return (
     <Searchbar onSearch={busquedaHandler}/>
     <fieldset>
       <legend>Filtros de búsqueda:</legend>
-      <div>
-        <TextInput onText={desdeHandler} label="Libros a partir del año..."/>
-        <TextInput onText={hastaHandler} label="Libros hasta el año..."/>
+      <div className="filtros__texto">
+        <NumberInput onText={desdeHandler} label="Libros a partir del año..." error={errorDesde}/>
+        <NumberInput onText={hastaHandler} label="Libros hasta el año..." error={errorHasta}/>
         <TextInput onText={temaHandler} label="Temática"/>
       </div>
-      <Select onSelect={idiomasHandler} label="Idiomas" opciones={idiomasDisponibles}/>
+      <div className="filtros__texto">
+        <Select onSelect={idiomasHandler} label="Idiomas" opciones={idiomasDisponibles}/>
+      </div>
     </fieldset>
     <button className="submit__button">Buscar</button>
   </form>

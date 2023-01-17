@@ -1,0 +1,15 @@
+.info__usuario {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    background: var(--secondary-light-color);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 5vh 5vw;
+    color: var(--primary-light-color)
+}
+
+.info__usuario img {
+    width: 10%;
+}

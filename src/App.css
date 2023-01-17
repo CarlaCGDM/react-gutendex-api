@@ -19,6 +19,10 @@ h2 {
     font-size: 2rem;
 }
 
+h3 {
+    font-size: 1.8rem;
+}
+
 .basic__form {
     display: flex;
     flex-direction: column;

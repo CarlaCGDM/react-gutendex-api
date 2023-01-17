@@ -9,11 +9,24 @@ import React from 'react'
 *   @param {string} props.error Mensaje de error que mostrará el input.
 */
 
-const NumberInput = () => {
+const NumberInput = (props) => {
+
+  const textChangeHandler = (e) => {
+    props.onText(e.target.value);
+  }
+
   return (
-    <div>
+    <div className="input__field">
+      <label>{props.label}</label>
+      <input 
+      type="number"
+      onChange={textChangeHandler} 
+      value={props.value}/>
+
+      {props.error && ( <p className="input__error"> { props.error } </p> )}
       
     </div>
+    
   )
 }
 

@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import { paginaFavoritos } from '../../scripts/peticiones';
-import Header from '../navegacion/Header';
-import Navbar from '../navegacion/Navbar';
-import Footer from '../navegacion/Footer';
-import LibrosGrid from '../LibrosGrid';
+import React, {useEffect, useState} from 'react'
+import { paginaFavoritos } from '../../scripts/peticiones'
+import Header from '../navegacion/Header'
+import Navbar from '../navegacion/Navbar'
+import Footer from '../navegacion/Footer'
+import LibrosGrid from '../LibrosGrid'
+import InfoUsuario from '../InfoUsuario'
 
 /**
 *   @description Página de perfil de la página web. El usuario puede ver la información que introdujo en el registro
@@ -41,11 +42,16 @@ const Perfil = () => {
     <main>
         <header className='section__header'>
             <h2>Perfil de usuario</h2>
-            <p>Consulta tu información personal y tus favoritos.</p>
+            <p>Consulta tu información personal y tus libros agregados a favoritos.</p>
         </header>
-        <section>Info del usuario</section>
+        <InfoUsuario 
+            nombre="testUser"
+            email="test@ejemplo.com"
+            fecha="01/01/1999"/>
+        <h3>Favoritos</h3>
         <LibrosGrid 
-        resultadosBusqueda={listadoFavoritos.results}/>
+        resultadosBusqueda={listadoFavoritos.results}
+        numeroResultados={listadoFavoritos.count}/>
     </main>
     <Footer />
     </>

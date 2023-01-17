@@ -12,5 +12,20 @@
 .filtros__busqueda fieldset {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.filtros__texto {
+    width: 50%;
+    padding: 20px;
+}
+
+.filtros__busqueda input {
+    width: 50%;
+}
+
+.filtros__busqueda select {
     width: 100%;
 }

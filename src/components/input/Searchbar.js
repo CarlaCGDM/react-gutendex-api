@@ -1,6 +1,7 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import '../../stylesheets/input/Searchbar.css'
 
 /**
 *   @description El componente permite introducir un input del tipo string y mostrar un mensaje de error.
@@ -19,11 +20,11 @@ const Searchbar = (props) => {
     }
 
   return (
-    <div>
-      <FontAwesomeIcon icon={faMagnifyingGlass} />
+    <div className="searchbar">
+      <FontAwesomeIcon className="searchbar__icon" icon={faMagnifyingGlass} />
       <input 
           className="searchbar__input"
-          type="text"
+          type="search"
           onChange={searchChangeHandler} />
     </div>
   )

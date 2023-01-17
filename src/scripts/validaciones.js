@@ -157,6 +157,33 @@ const validarNick = (nick) => {
     return regEx.test(nick) ? true : false;
 }
 
+/**
+*   Comprueba que el año que se ha introducido en los filtros de búsqueda sea válido (se compone únicamente de
+*   números, y no es mayor al año actual).
+*
+*   @param {string} anyo - Nombre de usuario introducido por el usuario en el formulario.
+*   @returns {boolean}
+*/
+
+const validarAnyo = (anyo) => {
+    
+    const regEx = /^\d+$/;
+    const anyoActual = new Date().getFullYear()
+
+    if (anyo === "") {
+        return true;
+    }
+
+    anyo=anyo.split("=")[1];
+    console.log(typeof anyo);
+    console.log(anyoActual);
+
+    if (parseInt(anyo) > anyoActual) {
+        return false;
+    }
+    return regEx.test(anyo) ? true : false;
+}
+
 export {
     validarEmail,
     validarEmailExistente,
@@ -166,5 +193,6 @@ export {
     validarAsunto,
     validarMensaje,
     validarFechaNacimiento,
-    validarNick
+    validarNick,
+    validarAnyo
 }
