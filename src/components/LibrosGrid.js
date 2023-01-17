@@ -15,6 +15,8 @@ import Libro from './Libro'
 
 const LibrosGrid = ({ resultadosBusqueda, numeroResultados }) => {
 
+  
+
     const resultados = resultadosBusqueda?.map(libro => <Libro key={libro.id} libro={libro} />);
     const contenido = resultados?.length ? resultados : <article><p>No se encontraron resultados.</p></article>
   

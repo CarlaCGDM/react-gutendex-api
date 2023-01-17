@@ -17,16 +17,6 @@ const Perfil = () => {
     /*Una cuarta parte de la pagina es los datos del usuario (imagen, nombre de usuario, etc.) */
     /*El resto es la grid de favoritos*/
 
-    /* Si no existen favoritos, añadimos unos cuantos favoritos iniciales en el localstorage. */
-
-    const favoritosIniciales = ["2641","30658","46423"];
-
-    if (localStorage.getItem("Favoritos") == null) {
-        localStorage.setItem("Favoritos",favoritosIniciales.join(","));
-    }
-
-    console.log(localStorage.getItem("Favoritos"));
-
     /* Extraemos los favoritos del localstorage */
 
     let favoritos = localStorage.getItem("Favoritos").split(",").filter((id) => id != "").map(Number);

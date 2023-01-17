@@ -20,6 +20,16 @@ const Inicio = () => {
 
   const [resultadosBusqueda, setResultadosBusqueda] = useState([]);
 
+  /* 
+  *   Si no existen favoritos, añadimos unos cuantos favoritos iniciales en el localstorage. 
+  */
+
+  const favoritosIniciales = ["2641","30658","46423"];
+
+  if (localStorage.getItem("Favoritos") == null) {
+      localStorage.setItem("Favoritos",favoritosIniciales.join(","));
+  }
+
   /*
   *   Estado inicial de los resultados de búsqueda (sin filtros). 
   */
