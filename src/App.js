@@ -10,7 +10,6 @@ import Detalle from "./components/vistas/Detalle";
 function App() {
   return (
     <div className="contenedor">
-      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/libros/:id" element={<Detalle />} />
@@ -19,7 +18,6 @@ function App() {
         <Route path="/registro" element={<Registro />}/>
         <Route path="/perfil" element={<Perfil />} />
       </Routes>
-      </BrowserRouter>
     </div>
   );
 }
