@@ -9,3 +9,7 @@ El proyecto se encuentra desplegado en GitHub Pages, y puedes acceder a él sigu
 ## Documentación
 
 Si quieres saber más sobre el funcionamiento interno de la API, puedes consultar la documentación automática de la misma (generada con JSDocs) en la carpeta "docs" de deste mismo repositorio. Allí encontrarás información sobre la función de cada uno de los componentes y funciones auxiliares que la han hecho posible.
+
+## Inicializar repositorio
+
+Si quieres ejecutar la aplicación en local, puedes clonar este repositorio y usar el comando ```npm install``` para instalar las dependencias necesarias. Después, puedes arrancarlo con ```npm start```. La aplicación web podrá encontrarse en la dirección local http://localhost:3000/.
