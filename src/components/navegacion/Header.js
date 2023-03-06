@@ -14,7 +14,7 @@ const Header = () => {
         <img src={Logo} alt="Logo de Gutendex"/>
         <div>
           <h1>Gutendex API</h1>
-          <p>¡Miles de libros pertenecientes al dominio público a tu alcance!</p>
+          <small><i>Powered by <a href="https://gutendex.com/" alt="gutendex.com">Gutendex</a></i></small>
         </div>
     </header>
   )
