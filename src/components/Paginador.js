@@ -18,6 +18,11 @@ import { paginaListado } from '../scripts/peticiones';
 
 const Paginador = ({resultadosBusqueda, setResultadosBusqueda}) => {
 
+    const handleScrollTotTop = () => {
+        const element = document.getElementById('grid__libros');
+        element.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
     /*
     *   El método onClick de cada botón cambiará los resultados que ve el usuario
     *   (página anterior o página siguiente).
@@ -26,12 +31,14 @@ const Paginador = ({resultadosBusqueda, setResultadosBusqueda}) => {
     const saltarPaginaAnterior = () => {
         paginaListado(resultadosBusqueda.previous).then(json => {
             setResultadosBusqueda(json);
+            handleScrollTotTop();
         });
     }
 
     const saltarPaginaSiguiente = () => {
         paginaListado(resultadosBusqueda.next).then(json => {
             setResultadosBusqueda(json);
+            handleScrollTotTop();
         });
     }
 
@@ -50,18 +57,17 @@ const Paginador = ({resultadosBusqueda, setResultadosBusqueda}) => {
     *   existan.
     */
 
-
   return (
     <div className='paginador__resultados'>
     
         {resultadosBusqueda.previous ? (
-        <button onClick={saltarPaginaAnterior}><FontAwesomeIcon icon={faLongArrowAltLeft} />Anterior</button>
+        <button className="boton__paginador" onClick={saltarPaginaAnterior}><FontAwesomeIcon icon={faLongArrowAltLeft} /></button>
         ) : "" }
       
         <p>Página {siguiente ? siguiente - 1 : total} de {total}</p>
         
         {resultadosBusqueda.next ? (
-        <button onClick={saltarPaginaSiguiente}>Siguiente<FontAwesomeIcon icon={faLongArrowAltRight} /></button>
+        <button className="boton__paginador" onClick={saltarPaginaSiguiente}><FontAwesomeIcon icon={faLongArrowAltRight} /></button>
         ) : "" }
 
     </div>

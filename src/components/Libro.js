@@ -36,7 +36,7 @@ const Libro = ({libro}) => {
 
           </img>
 
-          {mensaje && ( <div className="mensaje"><p>¡Ey, devuelve eso a su sitio!</p></div> )}
+          {mensaje && ( <div className="mensaje"><p>¡Ey, no te lo lleves!</p></div> )}
 
         </div>
 

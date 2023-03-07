@@ -44,12 +44,3 @@
     align-items: center;
 
 }
-
-.fave__button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(10%, -20%);
-    z-index: 100;
-    background-color:aquamarine
-}

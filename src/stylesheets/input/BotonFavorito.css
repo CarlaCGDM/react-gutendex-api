@@ -1,0 +1,12 @@
+.fave__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(23%, -20%);
+    z-index: 100;
+    background-color:transparent;
+    border: none;
+    width: 28%;
+    height: auto;
+    cursor: pointer;
+}

@@ -10,7 +10,7 @@ import '../../stylesheets/navegacion/Footer.css'
 const Footer = () => {
   return (
     <footer className="footer__principal">
-      <small>powered by <a href="https://gutendex.com/">Gutendex</a></small>
+      <small>© Nadina Carla Cardillo Garreta, 2ºDAW B</small>
     </footer>
   )
 }

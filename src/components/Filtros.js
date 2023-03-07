@@ -112,7 +112,7 @@ return (
         <Select onSelect={idiomasHandler} label="Idiomas" opciones={idiomasDisponibles}/>
       </div>
     </fieldset>
-    <button className="submit__button">Buscar</button>
+    <button className="submit__button"><span>Buscar</span></button>
   </form>
 )
 

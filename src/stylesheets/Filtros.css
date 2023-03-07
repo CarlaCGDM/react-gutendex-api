@@ -31,3 +31,42 @@
 .filtros__busqueda select {
     width: 40vw;
 }
+
+.submit__button {
+  display: inline-block;
+  background-color: var(--brand-color-dark);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 10px;
+padding: 10px 15px;
+font-size: 1em;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.submit__button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+.submit__button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+  }
+
+  .submit__button:hover span {
+    padding-right: 15px;
+  }
+  
+  .submit__button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

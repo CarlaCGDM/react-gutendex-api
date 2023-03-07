@@ -6,3 +6,12 @@
     padding: 20px;
     gap: 10px;
 }
+
+.boton__paginador {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

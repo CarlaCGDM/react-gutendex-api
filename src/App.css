@@ -1,14 +1,16 @@
 :root {
     --primary-dark-color: rgb(0, 0, 0);
-    --secondary-dark-color: rgb(48, 48, 48);
-    --brand-color: rgb(248, 16, 16);
+    --secondary-dark-color: #060606;
+    --brand-color: #9B1A0F;
+    --brand-color-dark: #601005;
     --primary-light-color: white;
-    --secondary-light-color: rgb(83, 83, 83);
+    --secondary-light-color: #1F1F1F;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
+    color: var(--primary-light-color)
 }
 
 h1 {

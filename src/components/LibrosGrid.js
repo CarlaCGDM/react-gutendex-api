@@ -21,8 +21,8 @@ const LibrosGrid = ({ resultadosBusqueda, numeroResultados }) => {
     const contenido = resultados?.length ? resultados : <article><p>No se encontraron resultados.</p></article>
 
   return (
-    <section className="grid__libros">
-      <header><small>Se encontraron {numeroResultados} resultados para tu búsqueda.</small></header>
+    <section id="grid__libros" className="grid__libros">
+      <header className="mensaje__resultados"><small>Se encontraron {numeroResultados} resultados para tu búsqueda.</small></header>
       <main>{contenido}</main>
     </section>
   )

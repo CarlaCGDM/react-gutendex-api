@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../stylesheets/input/BotonFavorito.css'
+import Like from '../../images/FavoritoSinMarcar.png';
+import Unlike from '../../images/FavoritoMarcado.png';
 
 /**
 *   @description El botón permite guardar un libro en favoritos si no se ha guardado ya, y 
@@ -49,8 +51,8 @@ const BotonFavorito = (props) => {
 
   return (
     <>
-      {!existe && ( <button className="fave__button" onClick={() => {agregar(props.id)}}>Añadir a favoritos</button> )}
-      {existe && ( <button className="fave__button" onClick={() => eliminar(props.id)}>Eliminar de favoritos</button> )}
+      {!existe && ( <button className="fave__button" onClick={() => {agregar(props.id)}}><img src={Like}/></button> )}
+      {existe && ( <button className="fave__button" onClick={() => eliminar(props.id)}><img src={Unlike}/></button> )}
     </>
   )
 }
