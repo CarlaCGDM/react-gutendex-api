@@ -57,13 +57,15 @@ const Inicio = () => {
         <Filtros 
           setResultadosBusqueda={setResultadosBusqueda} />
 
-        <LibrosGrid 
-          resultadosBusqueda={resultadosBusqueda.results}
-          numeroResultados={resultadosBusqueda.count}/>
+        <div class="resultados">
+          <LibrosGrid 
+            resultadosBusqueda={resultadosBusqueda.results}
+            numeroResultados={resultadosBusqueda.count}/>
 
-        <Paginador 
-          resultadosBusqueda={resultadosBusqueda}
-          setResultadosBusqueda={setResultadosBusqueda}/>
+          <Paginador 
+            resultadosBusqueda={resultadosBusqueda}
+            setResultadosBusqueda={setResultadosBusqueda}/>
+        </div>
       </div>
 
       <Footer />

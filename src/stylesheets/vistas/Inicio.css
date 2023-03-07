@@ -1,4 +1,11 @@
 .dos-columnas {
     display: flex;
     flex-direction: row;
+    height: 70vh;
+}
+
+.resultados {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-dark-color);
 }

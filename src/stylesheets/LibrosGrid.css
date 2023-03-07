@@ -1,12 +1,28 @@
 .grid__libros {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 50vw;
 }
+
+.grid__libros::-webkit-scrollbar {
+    width: 15px;
+  }
+   
+.grid__libros::-webkit-scrollbar-track {
+    background: rgb(95, 95, 95);
+    box-shadow: inset 0 0 6px rgba(37, 37, 37, 0.3);
+  }
+   
+.grid__libros::-webkit-scrollbar-thumb {
+    background: rgb(158, 158, 158);
+  }
 
 .grid__libros main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     align-content: baseline;
     justify-items: center;
-    grid-gap: 20px;
+    grid-gap: 10px;
     padding: 25px;
 }
 

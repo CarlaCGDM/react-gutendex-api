@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 160px;
+    width: 130px;
     gap: 5px;
 }
 
@@ -15,8 +15,10 @@
 }
 
 .portada__libro img {
-    border-radius: 10px;
+    border-radius: 5px;
     width: 100%;
+    aspect-ratio: 7 / 10;
+    object-fit: cover;
     height: auto;
 }
 
