@@ -15,8 +15,8 @@ const Libro = ({libro}) => {
 
   const [mensaje, setMensaje] = useState(false);
   const dragHandler = (e) => {
-    setMensaje(!mensaje);
     setTimeout(function() {
+      setMensaje(!mensaje);
       e.target.style.visibility = mensaje ? "visible" : "hidden";
     }, 1);
   }
@@ -26,6 +26,8 @@ const Libro = ({libro}) => {
 
         <div className="portada__libro">
 
+          {!mensaje && ( <BotonFavorito id={libro.id}/> )}
+
           <img 
           draggable 
           onDragStart={dragHandler} 
@@ -34,14 +36,14 @@ const Libro = ({libro}) => {
 
           </img>
 
-          {mensaje && ( <p>¡Ey, devuelve eso a su sitio!</p> )}
+          {mensaje && ( <div className="mensaje"><p>¡Ey, devuelve eso a su sitio!</p></div> )}
 
         </div>
 
         <Link to={`/libros/${libro.id}`}>{libro.title}</Link>
         <small>{libro.authors[0]?.name}</small>
 
-        <BotonFavorito className="boton__favorito" id={libro.id}/>
+        
 
     </article>
   )

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../../stylesheets/input/BotonFavorito.css'
 
 /**
 *   @description El botón permite guardar un libro en favoritos si no se ha guardado ya, y 

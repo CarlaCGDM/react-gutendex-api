@@ -1,7 +1,7 @@
 .dos-columnas {
     display: flex;
     flex-direction: row;
-    height: 70vh;
+    height: 75vh;
 }
 
 .resultados {

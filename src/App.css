@@ -39,3 +39,23 @@ h3 {
     text-align: center;
     margin-top: 5vh;
 }
+
+/* unvisited link */
+a:link {
+    color: rgb(255, 255, 255);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(197, 197, 197);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(175, 40, 22);
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }

@@ -53,11 +53,11 @@ const Inicio = () => {
       {/* <Navbar /> */}
       <Saludo />
 
-      <div class="dos-columnas">
+      <div className="dos-columnas">
         <Filtros 
           setResultadosBusqueda={setResultadosBusqueda} />
 
-        <div class="resultados">
+        <div className="resultados">
           <LibrosGrid 
             resultadosBusqueda={resultadosBusqueda.results}
             numeroResultados={resultadosBusqueda.count}/>
