@@ -100,19 +100,24 @@ const Filtros = ({setResultadosBusqueda}) => {
 
 return (
   <form className="filtros__busqueda" onSubmit={handleSubmit}>
+    <div className="bienvenida">
+      <h2>La literatura clásica, a tu alcance.</h2>
+      <p>Bucea en el catálogo de Project Gutenberg, un inmenso repositorio de obras literarias pertenecientes al dominio público.</p>
+    </div>
+    
     <Searchbar onSearch={busquedaHandler}/>
     <fieldset>
       <legend>Filtros de búsqueda:</legend>
       <div className="filtros__texto">
-        <NumberInput onText={desdeHandler} label="Libros a partir del año..." error={errorDesde}/>
-        <NumberInput onText={hastaHandler} label="Libros hasta el año..." error={errorHasta}/>
-        <TextInput onText={temaHandler} label="Temática"/>
+        <NumberInput className="filtro__busqueda" onText={desdeHandler} label="Libros a partir del año..." error={errorDesde}/>
+        <NumberInput className="filtro__busqueda" onText={hastaHandler} label="Libros hasta el año..." error={errorHasta}/>
+        <TextInput className="filtro__busqueda" onText={temaHandler} label="Temática"/>
       </div>
       <div className="filtros__texto">
         <Select onSelect={idiomasHandler} label="Idiomas" opciones={idiomasDisponibles}/>
+        <button className="submit__button"><span>Buscar</span></button>
       </div>
     </fieldset>
-    <button className="submit__button"><span>Buscar</span></button>
   </form>
 )
 

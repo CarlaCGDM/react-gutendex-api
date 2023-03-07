@@ -2,6 +2,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     width: 50vw;
+    color: white;
 }
 
 .grid__libros::-webkit-scrollbar {

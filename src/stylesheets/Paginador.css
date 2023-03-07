@@ -5,6 +5,7 @@
     justify-content: center;
     padding: 20px;
     gap: 10px;
+    color: white;
 }
 
 .boton__paginador {
@@ -14,4 +15,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }

@@ -7,12 +7,12 @@
     min-width: 50vw;
     margin: 0;
     padding: 0;
-    gap: 5vh;
+    gap: 3vh;
 }
 
 .filtros__busqueda fieldset {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 2vw;
@@ -21,16 +21,18 @@
 }
 
 .filtros__texto {
-    width: 40vw;
-}
-
-.filtros__busqueda input {
-    width: 40vw;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    align-items: center;
 }
 
 .filtros__busqueda select {
-    width: 40vw;
+    width: 20vw;
 }
+
+
 
 .submit__button {
   display: inline-block;
@@ -44,6 +46,7 @@ font-size: 1em;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  width: 100px;
 }
 
 .submit__button span {
@@ -69,4 +72,16 @@ font-size: 1em;
   .submit__button:hover span:after {
     opacity: 1;
     right: 0;
+  }
+
+  .bienvenida {
+    width: 40vw;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bienvenida h2 {
+    font-size: 2.25rem;
   }

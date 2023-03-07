@@ -5,8 +5,8 @@ label {
 .input__field {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    min-width: 60vw;
+    width: 100%;
+    color: rgb(255, 255, 255);
 }
 
 .input__error {

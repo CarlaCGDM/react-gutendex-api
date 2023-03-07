@@ -31,7 +31,7 @@ const Consejo = () => {
     }
 
     const cambiarFondoEnter = (e) => {
-      e.target.style.background = 'var(--secondary-dark-color)';
+      e.target.style.background = '#555';
     }
 
 
