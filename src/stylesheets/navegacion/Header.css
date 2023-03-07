@@ -4,6 +4,8 @@
     flex-direction: row;
     gap: 5px;
     justify-content: baseline;
+    align-items: center;
     color: var(--primary-light-color);
     padding: 10px;
+    height: 15vh;
 }

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { paginaListado } from '../../scripts/peticiones'
+import '../../stylesheets/vistas/Inicio.css';
 import Header from '../navegacion/Header';
 import Navbar from '../navegacion/Navbar';
 import Saludo from '../Consejo';
@@ -49,19 +50,21 @@ const Inicio = () => {
     <>
       
       <Header />
-      <Navbar />
+      {/* <Navbar /> */}
       <Saludo />
 
-      <Filtros 
-        setResultadosBusqueda={setResultadosBusqueda} />
+      <div class="dos-columnas">
+        <Filtros 
+          setResultadosBusqueda={setResultadosBusqueda} />
 
-      <LibrosGrid 
-        resultadosBusqueda={resultadosBusqueda.results}
-        numeroResultados={resultadosBusqueda.count}/>
+        <LibrosGrid 
+          resultadosBusqueda={resultadosBusqueda.results}
+          numeroResultados={resultadosBusqueda.count}/>
 
-      <Paginador 
-        resultadosBusqueda={resultadosBusqueda}
-        setResultadosBusqueda={setResultadosBusqueda}/>
+        <Paginador 
+          resultadosBusqueda={resultadosBusqueda}
+          setResultadosBusqueda={setResultadosBusqueda}/>
+      </div>
 
       <Footer />
     </>

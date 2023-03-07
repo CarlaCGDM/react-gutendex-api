@@ -26,13 +26,17 @@ const Consejo = () => {
       return () => clearInterval(id);
     }, []);
 
-    const cambiarFondoNegro = (e) => {
-      e.target.style.background = 'black';
+    const cambiarFondoRojo = (e) => {
+      e.target.style.background = '#4d0000';
+    }
+
+    const cambiarFondoGris = (e) => {
+      e.target.style.background = 'var(--secondary-dark-color)';
     }
 
 
   return (
-    <div className='consejo__dinamico' onMouseOver={cambiarFondoNegro} >
+    <div className='consejo__dinamico' onMouseEnter={cambiarFondoRojo} onMouseLeave={cambiarFondoGris}>
       <p>{consejos[index % consejos.length]}</p>
     </div>
   )
