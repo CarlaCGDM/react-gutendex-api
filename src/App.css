@@ -27,18 +27,46 @@ h3 {
 .basic__form {
     display: flex;
     flex-direction: column;
-    background-color: var(--secondary-light-color);
+    background-color:#222;
     color: var(--primary-light-color);
     gap: 20px;
     padding: 20px;
     border-radius: 15px;
     align-items: center;
-    margin: 5vh 5vw;
+    justify-content: center;
+    margin: 2vh 20vw;
+    min-height: 50vh;
+}
+
+.basic__form .input__field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+}
+
+.basic__form label {
+    width: 100%;
+    text-align: left;
+}
+
+.basic__form input[type="text"], input[type="password"], input[type="date"], textarea {
+    width: 100%;
 }
 
 .section__header {
     text-align: center;
-    margin-top: 5vh;
+    color: white;
+    padding: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form__main {
+    height: 80vh;
+    background-color: var(--secondary-dark-color);
 }
 
 /* unvisited link */

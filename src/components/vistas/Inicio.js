@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import { paginaListado } from '../../scripts/peticiones'
 import '../../stylesheets/vistas/Inicio.css';
 import Header from '../navegacion/Header';
-import Navbar from '../navegacion/Navbar';
 import Saludo from '../Consejo';
 import Footer from '../navegacion/Footer';
 import Filtros from '../Filtros';

@@ -74,9 +74,7 @@ const Contacto = () => {
   return (
     <>
     <Header />
-    <Navbar />
-
-    <main>
+    <main className="form__main"> 
         <header className="section__header">
             <h2>Contacto</h2>
             <p>¡Ayúdanos a mejorar!</p>

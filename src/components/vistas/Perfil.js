@@ -5,6 +5,7 @@ import Navbar from '../navegacion/Navbar'
 import Footer from '../navegacion/Footer'
 import LibrosGrid from '../LibrosGrid'
 import InfoUsuario from '../InfoUsuario'
+import '../../stylesheets/vistas/Perfil.css';
 
 /**
 *   @description Página de perfil de la página web. El usuario puede ver la información que introdujo en el registro
@@ -38,20 +39,20 @@ const Perfil = () => {
   return (
     <>
     <Header />
-    <Navbar />
-    <main>
+    <main className="main__profile">
         <header className='section__header'>
             <h2>Perfil de usuario</h2>
             <p>Consulta tu información personal y tus libros agregados a favoritos.</p>
         </header>
+        <div className="profile__sections">
         <InfoUsuario 
             nombre="testUser"
             email="test@ejemplo.com"
             fecha="01/01/1999"/>
-        <h3>Favoritos</h3>
         <LibrosGrid 
         resultadosBusqueda={listadoFavoritos.results}
         numeroResultados={listadoFavoritos.count}/>
+        </div>
     </main>
     <Footer />
     </>

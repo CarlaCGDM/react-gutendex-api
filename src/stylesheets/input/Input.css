@@ -11,5 +11,6 @@ label {
 
 .input__error {
     font-size: 0.9rem;
-    color: var(--brand-color);
+    color: rgb(252, 51, 51);
+    text-align: center;
 }

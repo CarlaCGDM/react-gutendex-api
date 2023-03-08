@@ -27,3 +27,9 @@
     padding: 1vh 1vw;
     padding: 0;
 }
+
+@media (max-width:500px) {
+    .searchbar__icon {
+        right: 6vw;
+    }
+}

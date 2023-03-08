@@ -93,8 +93,7 @@ const Registro = () => {
   return (
     <>
     <Header />
-    <Navbar />
-    <main>
+    <main className="form__main">
         <header className="section__header">
             <h2>Registro</h2>
             <p>¿Ya tienes cuenta? <Link to={`/login`}>Inicia sesión</Link>.</p>

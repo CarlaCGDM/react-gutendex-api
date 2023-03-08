@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { validarEmailExistente, validarPasswordExistente} from '../../scripts/validaciones'
 import Header from '../navegacion/Header';
-import Navbar from '../navegacion/Navbar';
 import Footer from '../navegacion/Footer';
 import TextInput from '../input/TextInput';
 import PasswordInput from '../input/PasswordInput';
@@ -66,8 +65,7 @@ const Login = () => {
   return (
     <>
     <Header />
-    <Navbar />
-    <main>
+    <main className="form__main">
         <header className="section__header">
             <h2>Login</h2>
             <p>¿No tienes cuenta? <Link to={`/registro`}>Regístrate</Link>.</p>

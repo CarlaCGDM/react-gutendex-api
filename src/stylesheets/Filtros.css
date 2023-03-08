@@ -88,7 +88,7 @@ font-size: 1em;
     .bienvenida {
         width: 100%;
         min-height: 10vh;
-        padding: 2vw 2vh;
+        padding-top: 13vh;
         text-align: center;
     }
 
@@ -97,7 +97,7 @@ font-size: 1em;
     }
 
     .bienvenida h2 {
-      font-size: 1.2rem;
+      display: none;
     }
 
     .filtros__busqueda fieldset {

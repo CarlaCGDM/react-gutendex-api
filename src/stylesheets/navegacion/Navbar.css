@@ -47,7 +47,9 @@
 @media (max-width: 500px) {
     .main__navbar {
         width: 80vw;
-        height: 100%;
+        height: 90%;
+        position: fixed;
+        bottom: 0;
     }
 
     .main__navbar img {

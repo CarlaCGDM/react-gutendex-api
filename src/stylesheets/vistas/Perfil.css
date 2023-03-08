@@ -1,0 +1,11 @@
+.main__profile {
+    height: 80vh;
+    background-color: var(--secondary-dark-color);
+    overflow: hidden;
+}
+
+.profile__sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
