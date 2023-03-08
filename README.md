@@ -4,7 +4,7 @@ En este proyecto, creado con el framework de React, puedes ver y filtrar el cat�
 
 ## Pruébala ahora
 
-El proyecto se encuentra desplegado en GitHub Pages, y puedes acceder a él siguiendo el siguiente enlace: https://carlacgdm.github.io/react-gutendex-api/#/
+El proyecto se encuentra desplegado en Netlify, y puedes acceder a él siguiendo el siguiente enlace: https://snazzy-creponne-3b32fb.netlify.app/#/
 
 ## Documentación
 
