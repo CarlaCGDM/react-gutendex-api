@@ -13,5 +13,11 @@
 .consejo__dinamico p {
     height: 100%;
     padding-top: 1.2vh;
-    background-color: #4d0000;
+    background-color: #555;
 }
+
+@media (max-width: 500px) {
+    .consejo__dinamico {
+        display: none;
+    }
+  }

@@ -9,3 +9,9 @@
     flex-direction: column;
     background-color: var(--secondary-dark-color);
 }
+
+@media (max-width: 500px) {
+    .dos-columnas {
+        flex-direction: column;
+    }
+  }

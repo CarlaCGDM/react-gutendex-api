@@ -32,8 +32,6 @@
     width: 20vw;
 }
 
-
-
 .submit__button {
   display: inline-block;
   background-color: var(--brand-color-dark);
@@ -84,4 +82,37 @@ font-size: 1em;
 
   .bienvenida h2 {
     font-size: 2.25rem;
+  }
+
+  @media (max-width: 500px) {
+    .bienvenida {
+        width: 100%;
+        min-height: 10vh;
+        padding: 2vw 2vh;
+        text-align: center;
+    }
+
+    .bienvenida p {
+      display: none;
+    }
+
+    .bienvenida h2 {
+      font-size: 1.2rem;
+    }
+
+    .filtros__busqueda fieldset {
+      width: 95%;
+    }
+
+    .filtros__busqueda {
+      gap: 0;
+    }
+
+    .filtros__texto {
+      width: 50%;
+    }
+
+    .filtros__busqueda select {
+      width: 100%;
+    }
   }

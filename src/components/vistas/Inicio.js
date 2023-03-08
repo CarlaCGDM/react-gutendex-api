@@ -51,7 +51,7 @@ const Inicio = () => {
       
       <Header />
       {/* <Navbar /> */}
-      <Saludo />
+      <Saludo/>
 
       <div className="dos-columnas">
         <Filtros 

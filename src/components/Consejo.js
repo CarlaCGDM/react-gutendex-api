@@ -27,11 +27,11 @@ const Consejo = () => {
     }, []);
 
     const cambiarFondoLeave = (e) => {
-      e.target.style.background = '#4d0000';
+      e.target.style.background = '#555';
     }
 
     const cambiarFondoEnter = (e) => {
-      e.target.style.background = '#555';
+      e.target.style.background = '#4d0000';
     }
 
 

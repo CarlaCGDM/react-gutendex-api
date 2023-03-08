@@ -3,9 +3,69 @@
     display: flex;
     flex-direction: row;
     gap: 5px;
-    justify-content: baseline;
+    justify-content: space-between;
     align-items: center;
     color: var(--primary-light-color);
-    padding: 10px;
+    padding: 1vw 3vh;
     height: 12.5vh;
+}
+
+.logo__area {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.picture__area {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: baseline;
+    align-items: center;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(50deg);
+    }
+    75% {
+        transform: rotate(-50deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.picture__area img {
+    height: 8vh;
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+.picture__area img:hover {
+    cursor: pointer;
+    animation-name: rotate; 
+    animation-duration: 3s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.picture__area img:not(:hover) {
+    transform: rotate(0deg);
+}
+
+@media (max-width: 500px) {
+    .main__header h1 {
+        font-size: 1.6rem;
+    }
+
+    .main__header small {
+        display: none;
+    }
+
 }

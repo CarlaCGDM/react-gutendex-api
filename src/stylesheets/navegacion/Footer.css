@@ -5,3 +5,9 @@
     text-align: center;
     height: 7.5vh;
 }
+
+@media (max-width: 500px) {
+    .footer__principal {
+        display: none;
+    }
+}
