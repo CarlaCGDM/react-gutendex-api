@@ -88,3 +88,28 @@ a:link {
   a:active {
     color: blue;
   }
+
+  @media (max-width: 500px) {
+    .section__header {
+        margin-top: 10vh;
+    }
+
+    .form__main {
+        height: 100vh;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .main__profile {
+        height: 100vh;
+    }
+
+    .basic__form {
+        margin: 2vh 0;
+        border-radius: 0px;;
+    }
+
+    .basic__form .input__field {
+        width: 80vw;
+    }
+  }

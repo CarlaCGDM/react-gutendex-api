@@ -9,3 +9,13 @@
     flex-direction: row;
     justify-content: center;
 }
+
+@media (max-width: 500px) {
+    .main__profile {
+        height: 100vh;
+    }
+    .profile__sections {
+        flex-direction: column;
+        gap: 20px;
+    }
+  }
